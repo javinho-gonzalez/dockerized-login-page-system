@@ -53,7 +53,7 @@ Dockerfile → Environment setup(Qt5 + dependencies).
 docker-compose.yml → Orquestration between app and database.
 init.sql → Database schema and role configuration.
 
-🔑 Testing credentials
+🔑 Testing login credentials
 Pre-configured test user:
 E-mail → aline@escola.com
 Action → click on login.
@@ -66,6 +66,12 @@ user_estudante → Limitted acces to content and scores.
 🌿 Branches 
 main → Stable version
 desenvolvimento → Development branch befor merging to main
+
+🧠 What I Learned
+- How to containerize applications using Docker
+- How to manage multi-container environments with Docker Compose
+- Basics of database role-based access control
+- Importance of environment consistency in development
 
 👨‍💻 Author
 Developed  by Javier Gonzalez 🚀
