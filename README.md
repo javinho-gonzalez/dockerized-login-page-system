@@ -1,44 +1,71 @@
-# 🏫 Sistema de Login Escolar (C++ & Docker)
+# 🏫 Dockerized Login Page System (Containerization Project)
 
-Este projeto é uma aplicação de login moderna desenvolvida em *C++/Qt, utilizando **PostgreSQL* como banco de dados e *Docker* para garantir que todos na equipe rodem o mesmo ambiente, sem necessidade de instalações locais complexas.
+## Objective
+This project demonstrates how to containerize and deploy a simple application using Docker
 
-## 🚀 Como Rodar o Projeto (Quick Start)
+## Description
+In this project, I used Docker to create and manage containers for a login page application integratedwith a PostgreSQL database. The goal was to understand how applications can be isolated, deployed, and run consistently across environments.
 
-Para rodar este projeto, você precisará apenas do *Docker Desktop* e de um *X-Server* (MobaXterm ou VcXsrv).
+## What I implemented
+- Created Docker containers for application and database
+- Created PostgreSQL data base specifying roles and permissions
+- Set up application environment using Docker
+- Managed container lifecycle with Docker compose
+- Tested application development and functionality
 
-### 1. Pré-requisitos
-*   [Docker Desktop](https://docker.com) instalado e rodando.
-*   [MobaXterm](https://mobatek.net) (Recomendado) ou XLaunch instalado.
+## Tools used
+- Docker
+- Docker Compose
+- PostgreSQL
+- C++ / QT
 
-## 🌿 Branches do Projeto
-Para manter a organização, utilizamos o seguinte padrão:
-*   *main*: Versão estável e funcional (não mexer diretamente).
-*   *desenvolvimento*: Branch para testes e novas funcionalidades. 
-> *Atenção:* Se você for um colaborador, certifique-se de trabalhar sempre na branch desenvolvimento antes de solicitar um merge para a main.
+## Key concepts demonstrated
+- Containerization
+- Environment Isolation
+- Multi-container orchestration
+- Basic database security (roles and permissions)
+- Deployment consistency
 
-### 2. Configuração do Monitor (X11)
-Antes de iniciar os containers, você deve abrir o *MobaXterm* para que a interface gráfica do Docker possa aparecer no seu Windows:
-1. Abra o MobaXterm.
-2. Certifique-se de que o ícone *X11* no topo está verde.
-3. Nas configurações de X11, garanta que "X11 remote access" esteja em *Full*.
+---
 
-### 3. Iniciando o Sistema
-No terminal da pasta do projeto, execute:
+## 🚀 How to run the program (Quick Start)
+
+### Requirements
+-  Docker Desktop installed and running
+- X-Server (MobaXterm ou VcXsrv for Windows).
+
+
+### 1. Start X Server
+Before running the containers:
+- Open **MobaXterm** or **VcXsrv**
+- Ensure X11 is enabled (for GUI display)
+
+---
+
+### 2. Run the application
+In the terminal execute:
 ```bash
 docker-compose up --build
-Use o código com cuidado.
 
-🛠️ Estrutura do Projeto
-/main.cpp: Lógica da interface e conexão com o banco de dados.
-Dockerfile: Configuração do ambiente Linux (instalação de Qt5 e Drivers SQL).
-docker-compose.yml: Orquestração entre o App e o Banco de Dados.
-init.sql: Script de criação das tabelas e permissões de segurança.
-🔑 Dados para Teste
-O banco de dados já nasce com um usuário pré-cadastrado para testes:
-E-mail: aline@escola.com
-Usuário de DB: user_login (focado apenas em autenticação).
-🛡️ Segurança
-Implementamos uma hierarquia de Roles no PostgreSQL:
-user_login: Possui acesso apenas à tabela de usuários para validação de e-mail.
-user_estudante: Acesso limitado a conteúdos e notas.
-Desenvolvido por Javier Gonzalez 🚀
+🛠️ Project Structure
+main.cpp → Application logic and database connection
+Dockerfile → Environment setup(Qt5 + dependencies).
+docker-compose.yml → Orquestration between app and database.
+init.sql → Database schema and role configuration.
+
+🔑 Testing credentials
+Pre-configured test user:
+E-mail → aline@escola.com
+Action → click on login.
+
+🛡️ Security
+Implemented role-based access control in PostgreSQL:
+user_login → Access to user table and  email validation.
+user_estudante → Limitted acces to content and scores.
+
+🌿 Branches 
+main → Stable version
+desenvolvimento → Development branch befor merging to main
+
+👨‍💻 Author
+Developed  by Javier Gonzalez 🚀
