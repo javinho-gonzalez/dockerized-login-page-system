@@ -1,5 +1,7 @@
 # 🏫 Dockerized Login Page System (Containerization Project)
 
+Beginner containerization project demonstrating how to deploy a login application using Docker and PostgreSQL.
+
 ## Objective
 This project demonstrates how to containerize and deploy a simple application using Docker
 
